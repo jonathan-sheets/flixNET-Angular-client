@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 // Declaring the api url that will provide data for the client app
-const apiUrl = 'https://flixnet-2020.herokuapp.com';
+const apiUrl = 'https://flixnet-2020.herokuapp.com/';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class UserRegistrationService {
 
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    // console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
       catchError(this.handleError)
     );
@@ -38,6 +38,9 @@ export class UserRegistrationService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class UserLoginService {
 
   constructor(private http: HttpClient) {}
@@ -64,6 +67,9 @@ export class UserLoginService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class GetAllMoviesService {
 
   constructor(private http: HttpClient) {}
@@ -98,6 +104,9 @@ export class GetAllMoviesService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class GetSingleMovieService {
   constructor(private http: HttpClient) {}
 
@@ -132,6 +141,9 @@ export class GetSingleMovieService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class GetDirectorService {
   constructor(private http: HttpClient) {}
 
@@ -166,6 +178,9 @@ export class GetDirectorService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class GetGenreService {
   constructor(private http: HttpClient) {}
 
@@ -200,6 +215,9 @@ export class GetGenreService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class GetUserService {
   constructor(private http: HttpClient) {}
 
@@ -234,6 +252,9 @@ export class GetUserService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class GetFavoriteMoviesService {
   constructor(private http: HttpClient) {}
 
@@ -268,6 +289,9 @@ export class GetFavoriteMoviesService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class AddFavoriteMovieService {
   constructor(private http: HttpClient) {}
 
@@ -302,6 +326,9 @@ export class AddFavoriteMovieService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class EditUserService {
   constructor(private http: HttpClient) {}
 
@@ -336,6 +363,9 @@ export class EditUserService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class DeleteUserService {
   constructor(private http: HttpClient) {}
 
@@ -370,6 +400,9 @@ export class DeleteUserService {
   }
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class DeleteFavoriteMovieService {
   constructor(private http: HttpClient) {}
 
