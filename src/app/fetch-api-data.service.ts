@@ -79,7 +79,7 @@ export class GetAllMoviesService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
@@ -113,7 +113,7 @@ export class GetSingleMovieService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
@@ -147,7 +147,7 @@ export class GetDirectorService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
@@ -181,7 +181,7 @@ export class GetGenreService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
@@ -215,7 +215,7 @@ export class GetUserService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
@@ -249,7 +249,7 @@ export class GetFavoriteMoviesService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
@@ -283,7 +283,7 @@ export class AddFavoriteMovieService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
@@ -317,7 +317,7 @@ export class EditUserService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
@@ -351,7 +351,7 @@ export class DeleteUserService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
@@ -385,7 +385,7 @@ export class DeleteFavoriteMovieService {
     );
   }
   // Non-typed response extraction
-  private extractResponseData(res: Object): any { // res: Response caused an error above on this.extractResponseData
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
   }
