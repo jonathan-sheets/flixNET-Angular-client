@@ -9,12 +9,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'flixNET-Angular-client';
-
-  // constructor(public dialog: MatDialog) { }
-  
-  // openMoviesDialog(): void {
-  //   this.dialog.open(MovieCardComponent, {
-  //     width: '500px'
-  //   });
-  // }
 }
