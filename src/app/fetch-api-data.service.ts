@@ -62,7 +62,7 @@ export class UserLoginService {
       );
     }
     return throwError(
-      'Something bad happened: please try again later.'
+      'Invalid username or password.  Please try again.'
     );
   }
 }
