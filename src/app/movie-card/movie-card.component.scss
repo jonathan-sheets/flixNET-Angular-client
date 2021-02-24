@@ -1,0 +1,24 @@
+img {
+  width: 270px;
+}
+
+.all-movies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.favorite-icon {
+  background-color: transparent;
+  border: none;
+  // box-shadow: 0 10px #999;
+}
+
+.favorite-icon:active {
+  transform: translateY(3px);
+}
+
+.favorite-icon:hover {
+  cursor: pointer;
+}

@@ -1,33 +1,53 @@
-<div style="display: flex;">
-  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
+<app-nav-bar></app-nav-bar>
+
+<!-- <div class="form-group">
+  <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm">
+</div> -->
+
+<div class="all-movies">
+  <mat-card *ngFor="let movie of movies;">
+  <!-- <mat-card *ngFor="let movie of movies | filter:filterTerm"> -->
     <mat-card-header>
     <mat-card-title>{{movie.Title}}</mat-card-title>
-      <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
     </mat-card-header>
 
     <img src={{movie.ImagePath}} alt= {{movie.Title}} />
 
     <mat-card-actions>
+      Directed by:
       <button
         mat-button
         color="primary"
+        (click)="showDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Death)"
       >
-        Genre
+        {{movie.Director.Name}}
       </button>
+      <br/>
+      Genre:
       <button
         mat-button
         color="primary"
+        (click)="showGenreDialog(movie.Genre.Name, movie.Genre.Description)"
       >
-        Director
+        {{movie.Genre.Name}}
       </button>
+      <br/>
       <button
         mat-button
         color="primary"
+        (click)="showDetailsDialog(movie.Title, movie.ImagePath, movie.Description, movie.Director.Name, movie.Genre.Name)"
       >
-        Synopsis
+        Details
       </button>
-
-      <mat-icon>favorite_border</mat-icon>
+      
+      <mat-icon
+        class="favorite-icon"
+        (click)="addFavorite(movie._id, movie.Title)"
+        color="warn"
+      >
+        favorite_border
+      </mat-icon>
+    
     </mat-card-actions> 
   </mat-card>
 </div>

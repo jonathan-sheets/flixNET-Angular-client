@@ -30,7 +30,7 @@ export class UserRegistrationFormComponent implements OnInit {
       // logic for a successful user registration goes here!
       this.dialogRef.close(); // this will close the modal on success
       console.log(response);
-      this.snackBar.open('user registered successfully!', 'OK', {
+      this.snackBar.open('Account created successfully, you may now log in!', 'OK', {
         duration: 2000
       });
     }, (response) => {
@@ -40,5 +40,4 @@ export class UserRegistrationFormComponent implements OnInit {
       });
     });
   }
-
 }
