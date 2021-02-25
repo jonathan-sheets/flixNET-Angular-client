@@ -38,8 +38,8 @@ export class SearchPipe implements PipeTransform {
         }
         return false;
       })}
-  return items.filter( function(item: any) {
-    return (item[objectFieldName].toString().toLowerCase.includes(toCompare));
+      return items.filter( function(item:any) {
+        return (item[objectFieldName].toString().toLowerCase().includes(toCompare)) ;
     })
   }
 }
