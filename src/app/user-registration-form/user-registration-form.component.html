@@ -1,11 +1,12 @@
-<mat-card>
+<mat-card class="signup-card">
   <mat-card-header>
-    <mat-card-title>Sign Up!</mat-card-title>
+    <mat-card-title class="signup-title">Sign Up!</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form>
       <mat-form-field>
         <input
+          class="username"
           matInput
           [(ngModel)]="userData.Username"
           placeholder="Username"
@@ -49,7 +50,7 @@
     <button
       mat-raised-button
       (click)="registerUser()"
-      color="primary"
+      color="basic"
     >
       Sign Up
     </button>

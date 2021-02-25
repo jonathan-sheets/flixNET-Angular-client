@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+.background {
+  background-image: linear-gradient(to bottom right, #cfd8dc, #90a4ae, #546e7a);
+  background-attachment: fixed;
+}
+
 img {
-  width: 270px;
+  display: block;
+  width: 265px;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 .all-movies {
@@ -9,16 +19,43 @@ img {
   justify-content: center;
 }
 
-.favorite-icon {
-  background-color: transparent;
-  border: none;
-  // box-shadow: 0 10px #999;
+.mat-card {
+  background-color: rgba(55, 71, 79, 0.4);
+  box-shadow: 5px 5px 10px black;
+  font-family: 'Michroma', sans-serif;
+  margin: 15px;
+  border-radius: 15px;
+  width: 300px;
 }
 
-.favorite-icon:active {
-  transform: translateY(3px);
+.movie-title {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  -webkit-text-stroke: 1px black;
+  letter-spacing: 1px;
+  color: black;
 }
 
-.favorite-icon:hover {
-  cursor: pointer;
+button {
+  font-family: 'Michroma', sans-serif;
+}
+
+.favorite-button {
+  margin-left: 80px;
+}
+
+.director-button {
+  font-size: 12px;
+  padding: -3px;
+  float: right;
+}
+
+.genre-button {
+  font-size: 12px;
+  float: right;
+}
+
+.details-button {
+  font-size: 12px;
 }

@@ -8,8 +8,11 @@ import {
 import { DetailsDialogComponent } from '../details-dialog/details-dialog.component';
 import { DirectorDialogComponent } from '../director-dialog/director-dialog.component';
 import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
+// import { SearchPipe } from '../search.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
+// import { SearchPipe } from '../search.pipe';
 
 @Component({
   selector: 'app-movie-card',
@@ -17,14 +20,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent implements OnInit {
-  // filterTerm!: string;
+  filterTerm!: string;
   movies: any[] = [];
   constructor(
     public fetchApiData: GetAllMoviesService,
     public fetchApiData2: AddFavoriteMovieService,
     public fetchApiData3: DeleteFavoriteMovieService,
     public dialog: MatDialog,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public buttonModule: MatButtonModule,
+    // public SearchPipe: SearchPipe,
     ) { }
 
   ngOnInit(): void {

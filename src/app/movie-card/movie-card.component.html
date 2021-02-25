@@ -1,53 +1,69 @@
 <app-nav-bar></app-nav-bar>
+<div class=background>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm">
+  </div>
 
-<!-- <div class="form-group">
-  <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm">
-</div> -->
+  <div class="all-movies">
+    <!-- <mat-card *ngFor="let movie of movies;"> -->
+    <mat-card *ngFor="let movie of movies | customfilter:filterTerm:'Title'">
+      <mat-card-header>
+      <div class="movie-title">
+      <mat-card-title>{{movie.Title}}</mat-card-title>
+      </div>
+      </mat-card-header>
 
-<div class="all-movies">
-  <mat-card *ngFor="let movie of movies;">
-  <!-- <mat-card *ngFor="let movie of movies | filter:filterTerm"> -->
-    <mat-card-header>
-    <mat-card-title>{{movie.Title}}</mat-card-title>
-    </mat-card-header>
+      <img mat-card-image src={{movie.ImagePath}} alt= {{movie.Title}} />
 
-    <img src={{movie.ImagePath}} alt= {{movie.Title}} />
+      <mat-card-actions>
+        Directed by:
+        <button
+          class="director-button"
+          mat-stroked-button
+          color="basic"
+          (click)="showDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Death)"
+        >
+          {{movie.Director.Name}}
+        </button>
+        <br/>
+        <br/>
+        Genre:
+        <button
+          class="genre-button"
+          mat-stroked-button
+          color="basic"
+          (click)="showGenreDialog(movie.Genre.Name, movie.Genre.Description)"
+        >
+          {{movie.Genre.Name}}
+        </button>
+        <br/>
+        <br/>
+        <button
+          class="details-button"
+          mat-stroked-button
+          color="basic"
+          (click)="showDetailsDialog(movie.Title, movie.ImagePath, movie.Description, movie.Director.Name, movie.Genre.Name)"
+        >
+          Details
+        </button>
 
-    <mat-card-actions>
-      Directed by:
-      <button
-        mat-button
-        color="primary"
-        (click)="showDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Death)"
-      >
-        {{movie.Director.Name}}
-      </button>
-      <br/>
-      Genre:
-      <button
-        mat-button
-        color="primary"
-        (click)="showGenreDialog(movie.Genre.Name, movie.Genre.Description)"
-      >
-        {{movie.Genre.Name}}
-      </button>
-      <br/>
-      <button
-        mat-button
-        color="primary"
-        (click)="showDetailsDialog(movie.Title, movie.ImagePath, movie.Description, movie.Director.Name, movie.Genre.Name)"
-      >
-        Details
-      </button>
+        
+          <button
+          class="favorite-button"
+          mat-icon-button
+          (click)="addFavorite(movie._id, movie.Title)"
+          color="warn"
+          aria-label="Add movie to favorites button"
+        >
+          <mat-icon>
+            favorite_border
+          </mat-icon>
+        </button>
+        
+        
+        
       
-      <mat-icon
-        class="favorite-icon"
-        (click)="addFavorite(movie._id, movie.Title)"
-        color="warn"
-      >
-        favorite_border
-      </mat-icon>
-    
-    </mat-card-actions> 
-  </mat-card>
+      </mat-card-actions> 
+    </mat-card>
+  </div>
 </div>
