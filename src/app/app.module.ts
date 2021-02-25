@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
@@ -25,6 +25,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { DetailsDialogComponent } from './details-dialog/details-dialog.component';
 import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
 import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
+import { SearchPipe } from './search.pipe';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -46,11 +47,12 @@ const appRoutes: Routes = [
     DetailsDialogComponent,
     DirectorDialogComponent,
     GenreDialogComponent,
+    SearchPipe,
   ],
   exports: [RouterModule],
   imports: [
     BrowserModule,
-    Ng2SearchPipeModule,
+    // Ng2SearchPipeModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
