@@ -25,8 +25,21 @@ input {
   font-size: 14px;
 }
 
-button {
+.register-button {
   font-family: 'Michroma', sans-serif;
   margin-bottom: 5px;
   border: 1px solid black;
+}
+
+.close-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: absolute;
+  top: -5px;
+  right: 28px;
+}
+
+.close-icon {
+  width: 0;
 }

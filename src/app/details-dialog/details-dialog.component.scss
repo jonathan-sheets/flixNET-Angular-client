@@ -23,3 +23,16 @@ img {
 .movie-details {
   font-family: 'Michroma', sans-serif;
 }
+
+.close-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 8px;
+  margin-top: -25px;
+  margin-bottom: -20px;
+}
+
+.close-icon {
+  width: 0;
+}

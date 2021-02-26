@@ -1,4 +1,9 @@
 <mat-card class="update-card">
+  <div class="close-icon-container">
+    <button mat-icon-button class="close-icon" color="basic" [mat-dialog-close]="true">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
   <mat-card-header>
     <mat-card-title class="update-title">Update Profile</mat-card-title>
   </mat-card-header>
@@ -49,6 +54,7 @@
 
   <mat-card-actions>
     <button
+      class="update-button"
       mat-raised-button
       (click)="editUser()"
       color="basic"

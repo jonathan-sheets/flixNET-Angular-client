@@ -1,4 +1,9 @@
 <mat-card class="signup-card">
+  <div class="close-icon-container">
+    <button mat-icon-button class="close-icon" color="basic" [mat-dialog-close]="true">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
   <mat-card-header>
     <mat-card-title class="signup-title">Sign Up!</mat-card-title>
   </mat-card-header>
@@ -48,6 +53,7 @@
   </mat-card-content>
   <mat-card-actions>
     <button
+      class="register-button"
       mat-raised-button
       (click)="registerUser()"
       color="basic"
