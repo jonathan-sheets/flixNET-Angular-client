@@ -31,3 +31,15 @@ button {
 .nav-links {
   margin-right: 35px;
 }
+
+@media only screen and (max-width: 464px) {
+  .nav-links {
+    margin-right: -5px;
+  }
+  .app-title {
+    margin-left: 0px;
+  }
+  button {
+    font-size: 14px;
+  }
+}

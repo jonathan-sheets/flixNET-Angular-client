@@ -5,11 +5,36 @@
   background-attachment: fixed;
 }
 
+input {
+  font-family: 'Michroma', sans-serif;
+  width: 420px;
+  height: 30px;
+  background-color: #CFD8DC;
+  padding-left: 15px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 1px 1px 10px black;
+}
+
+input:focus {
+  outline: none !important;
+  border-color: black;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  padding-top: 23px;
+}
+
 img {
   display: block;
   width: 265px;
   margin: auto;
   margin-bottom: 10px;
+  box-shadow: 3px 3px 15px red;
 }
 
 .all-movies {
@@ -21,11 +46,10 @@ img {
 
 .mat-card {
   background-color: rgba(55, 71, 79, 0.4);
-  box-shadow: 5px 5px 10px black;
+  box-shadow: 8px 8px 15px black;
   font-family: 'Michroma', sans-serif;
-  margin: 15px;
-  border-radius: 15px;
-  width: 300px;
+  margin: 20px;
+  width: 310px;
 }
 
 .movie-title {
@@ -41,21 +65,53 @@ button {
   font-family: 'Michroma', sans-serif;
 }
 
-.favorite-button {
-  margin-left: 80px;
-}
-
-.director-button {
-  font-size: 12px;
-  padding: -3px;
-  float: right;
-}
-
-.genre-button {
-  font-size: 12px;
-  float: right;
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .details-button {
-  font-size: 12px;
+  font-size: 14px;
+  border: .5px solid #37474F;
+}
+
+.directed-by {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.director-button {
+  font-size: 11px;
+  float: right;
+  text-decoration: underline;
+}
+
+.genre {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.genre-button {
+  font-size: 11px;
+  float: right;
+  text-decoration: underline;
+}
+
+.favorite {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.favorite-button {
+  transform: scale(1.65);
+  filter: blur(0.7px);
+}
+
+.favorite-button:hover {
+  box-shadow: 1px 1px 1px red;
+  background-color: rgba(38, 50, 56, 0.3);
 }

@@ -13,6 +13,10 @@
   border: 1px solid black;
 }
 
+::ng-deep.mat-dialog-container {
+  background-color: #B0BEC5;
+}
+
 .mat-form-field {
   margin-top: 8px;
 }
