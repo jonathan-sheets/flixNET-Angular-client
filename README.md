@@ -1,8 +1,6 @@
 # FlixNETAngularClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
-
-See it in action [HERE](https://jonathan-sheets.github.io/flixNET-Angular-client)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.   - See it in action [HERE](https://jonathan-sheets.github.io/flixNET-Angular-client)
 
 ## Development server
 
