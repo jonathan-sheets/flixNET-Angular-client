@@ -24,22 +24,22 @@
       </mat-card-content>
       <mat-card-actions>
         <div class="profile-buttons">
-        <button
-          class="update-profile"
-          mat-raised-button
-          color="basic"
-          (click)="openUpdateProfileDialog()"
-        >
-          Update Profile
-        </button>
-        <button
-          class="delete-profile"
-          mat-raised-button
-          color="warn"
-          (click)="deleteProfile()"
-        >
-          Delete Profile
-        </button>
+          <button
+            class="update-profile"
+            mat-raised-button
+            color="basic"
+            (click)="openUpdateProfileDialog()"
+          >
+            Update Profile
+          </button>
+          <button
+            class="delete-profile"
+            mat-raised-button
+            color="warn"
+            (click)="deleteProfile()"
+          >
+            Delete Profile
+          </button>
         </div>
       </mat-card-actions>
     </mat-card>
@@ -47,16 +47,16 @@
 
   <div class="favorites-container">
     <!-- <mat-card-content> -->
-      <div class="title-container">
+    <div class="title-container">
       <mat-card-title class="title">Your Favorite Movies:</mat-card-title>
-      </div>
+    </div>
     <!-- </mat-card-content> -->
     <div class="favorite-cards">
       <mat-card class="favorite" *ngFor="let favorite of favorites;">
         <img src={{favorite.ImagePath}} alt= {{favorite.Title}}/>
-        <div class="favorite-title">
-          <mat-card-title>{{favorite.Title}}</mat-card-title>
-        </div>
+          <div class="favorite-title">
+            <mat-card-title>{{favorite.Title}}</mat-card-title>
+          </div>
         <div class="remove-favorite">
           <!-- <mat-card-actions> -->
             <button
