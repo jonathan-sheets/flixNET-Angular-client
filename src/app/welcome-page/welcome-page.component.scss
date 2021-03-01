@@ -1,19 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
-html {
-  background-image: linear-gradient(to bottom right, #cfd8dc, #90a4ae, #546e7a);
+body {
+  display: flex;
+  justify-content: center;
 }
 
 .main-page {
-  text-align: center;
-  // margin-top: 40px;
-  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.welcome-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 h1 {
   font-family: 'Michroma', sans-serif;
   font-size: 30px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 span {
@@ -27,4 +37,5 @@ button {
   margin-top: 5px;
   border: 1px solid black;
   -webkit-text-stroke: 0.5px black;
+  width: 100px;
 }

@@ -3,21 +3,23 @@
     <h1>
       Welcome to <span>flixNET!</span>
     </h1>
-    <button
-      mat-raised-button
-      (click)="openUserRegistrationDialog()"
-      style="margin-right: 20px;"
-      color="basic"
-    >
-      Sign Up
-    </button>
+    <div class="welcome-buttons">
+      <button
+        mat-raised-button
+        (click)="openUserRegistrationDialog()"
+        style="margin-right: 20px;"
+        color="basic"
+      >
+        Sign Up
+      </button>
 
-    <button
-      mat-raised-button
-      (click)="openUserLoginDialog()"
-      color="basic"
-    >
-      Login
-    </button>
+      <button
+        mat-raised-button
+        (click)="openUserLoginDialog()"
+        color="basic"
+      >
+        Login
+      </button>
+  </div>
   </div>
 </body>
