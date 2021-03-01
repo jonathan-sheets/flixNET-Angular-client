@@ -36,7 +36,7 @@ $flixNET-Angular-client-theme: mat-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html, body { 
-  height: 100%;
+  min-height: 100%;
   background-image: linear-gradient(to bottom right, #cfd8dc, #90a4ae, #546e7a);
 }
 body { 

@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
+#navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
 .nav-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
+  padding: 12px;
   background-color: #546E7A;
   // background-color: rgba(185, 162, 162, 0.6);
 }
@@ -41,5 +48,11 @@ button {
   }
   button {
     font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .nav-links{ 
+    margin-left: 140px;
   }
 }

@@ -2,12 +2,12 @@
 
 .background {
   background-image: linear-gradient(to bottom right, #cfd8dc, #90a4ae, #546e7a);
-  background-attachment: fixed;
+  // background-attachment: fixed;
 }
 
 input {
   font-family: 'Michroma', sans-serif;
-  width: 420px;
+  width: 400px;
   height: 30px;
   background-color: #CFD8DC;
   padding-left: 15px;
@@ -26,7 +26,7 @@ input:focus {
 .search-box {
   display: flex;
   justify-content: center;
-  padding-top: 23px;
+  padding-top: 20px;
 }
 
 img {
