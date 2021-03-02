@@ -4,20 +4,32 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-// Declaring the api url that will provide data for the client app
+/**
+ * Declaring the api url that will provide data for the client app
+ */
 const apiUrl = 'https://flixnet-2020.herokuapp.com/';
 
+/**
+ * This class allows a user to register a new account
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class UserRegistrationService {
-  // Inject the HttpClient module to the constructor params
-  // This will provide HttpClient to the entire class, making it available via this.http
-  constructor(private http: HttpClient) {}
+  /**
+   * Inject the HttpClient module to the constructor params
+   * This will provide HttpClient to the entire class, making it available via this.http
+   * @param http 
+   */
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  // Making the api call for the user registration endpoint
+  /**
+   * Making the api call for the user registration endpoint
+   * @param userDetails 
+   */
   public userRegistration(userDetails: any): Observable<any> {
-    // console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
       catchError(this.handleError)
     );
@@ -38,16 +50,22 @@ export class UserRegistrationService {
   }
 }
 
+/**
+ * This class allows a user to log in to their account
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class UserLoginService {
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  constructor(private http: HttpClient) {}
-
-  // making the api call to the user login endpoint
+  /**
+   * making the api call to the user login endpoint
+   * @param userDetails 
+   */
   public userLogin(userDetails: any): Observable<any> {
-    // const token = localStorage.getItem('token');
     console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails)
     .pipe(catchError(this.handleError));
@@ -67,14 +85,20 @@ export class UserLoginService {
   }
 }
 
+/**
+ * This class gets a list of all movies in the database and returns them as an array of objects
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class GetAllMoviesService {
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  constructor(private http: HttpClient) {}
-
-  // making the api call to the get all movies endpoint
+  /**
+   * making the api call to the get all movies endpoint
+   */
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies', {
@@ -104,13 +128,20 @@ export class GetAllMoviesService {
   }
 }
 
+/**
+ * This class returns a single movie by title
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class GetSingleMovieService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  // making the api call to get single movie information
+  /**
+   * making the api call to get single movie information
+   */
   getSingleMovie(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/:Title', {
@@ -121,7 +152,6 @@ export class GetSingleMovieService {
     catchError(this.handleError)
     );
   }
-  // Non-typed response extraction
   private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
@@ -141,13 +171,20 @@ export class GetSingleMovieService {
   }
 }
 
+/**
+ * This class returns a director object by the director's name
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class GetDirectorService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  //making the api call to get director data
+  /**
+   * making the api call to get director data
+   */
   getDirector(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/directors/:Name', {
@@ -158,7 +195,6 @@ export class GetDirectorService {
     catchError(this.handleError)
     );
   }
-  // Non-typed response extraction
   private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
@@ -178,13 +214,20 @@ export class GetDirectorService {
   }
 }
 
+/**
+ * This class returns genre info by genre name
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class GetGenreService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  //making the api call to get genre data
+  /**
+   * making the api call to get genre data
+   */
   getGenre(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/genres/:Name', {
@@ -195,7 +238,6 @@ export class GetGenreService {
     catchError(this.handleError)
     );
   }
-  // Non-typed response extraction
   private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
@@ -215,13 +257,20 @@ export class GetGenreService {
   }
 }
 
+/**
+ * This class returns a user object by username
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class GetUserService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  //making the api call to get user data by username
+  /**
+   * making the api call to get user data by username
+   */
   getUser(): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
@@ -233,7 +282,6 @@ export class GetUserService {
     catchError(this.handleError)
     );
   }
-  // Non-typed response extraction
   private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
@@ -253,16 +301,21 @@ export class GetUserService {
   }
 }
 
+/**
+ * This class returns a user's favorite movies by username
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class GetFavoriteMoviesService {
   constructor(private http: HttpClient) {}
 
-  // making the api call to get a user's favorite movies
+  /**
+   * making the api call to get a user's favorite movies
+   */
   getFavoriteMovies(): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + 'users/:Username/favorites', { //not sure about this endpoint - favorites are displayed on user profile view
+    return this.http.get(apiUrl + 'users/:Username/favorites', {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       })
@@ -270,7 +323,6 @@ export class GetFavoriteMoviesService {
     catchError(this.handleError)
     );
   }
-  // Non-typed response extraction
   private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
@@ -290,13 +342,21 @@ export class GetFavoriteMoviesService {
   }
 }
 
+/**
+ * This class adds a movie to the user's list of favorites
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class AddFavoriteMovieService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  // making the api call to add a movie to a user's list of favorites
+  /**
+   * making the api call to add a movie to a user's list of favorites
+   * @param id 
+   */
   addFavoriteMovie(id: string): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
@@ -308,7 +368,6 @@ export class AddFavoriteMovieService {
     catchError(this.handleError)
     );
   }
-  // Non-typed response extraction
   private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
@@ -328,13 +387,21 @@ export class AddFavoriteMovieService {
   }
 }
 
+/**
+ * This class allows a user to update their information
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class EditUserService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  // making the api call to edit a user's information
+  /**
+   * making the api call to edit a user's information
+   * @param userDetails 
+   */
   editUser(userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
@@ -346,7 +413,6 @@ export class EditUserService {
     catchError(this.handleError)
     );
   }
-  // Non-typed response extraction
   private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
@@ -366,13 +432,20 @@ export class EditUserService {
   }
 }
 
+/**
+ * This class allows a user to delete their account and remove the user from the database
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class DeleteUserService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  // making the api call to delete a user
+  /**
+   * making the api call to delete a user
+   */
   deleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
@@ -385,7 +458,6 @@ export class DeleteUserService {
     catchError(this.handleError)
     );
   }
-  // Non-typed response extraction
   private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
@@ -405,13 +477,21 @@ export class DeleteUserService {
   }
 }
 
+/**
+ * This class allows a user to remove a movie from their favorite's list
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class DeleteFavoriteMovieService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  // making the api call to add a movie to a user's list of favorites
+  /**
+   * making the api call to add a movie to a user's list of favorites
+   * @param id 
+   */
   deleteFavoriteMovie(id: string): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
@@ -423,7 +503,6 @@ export class DeleteFavoriteMovieService {
     catchError(this.handleError)
     );
   }
-  // Non-typed response extraction
   private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
     const body = res;
     return body || { };
@@ -441,4 +520,11 @@ export class DeleteFavoriteMovieService {
       'Something bad happened: please try again later.'
     );
   }
+}
+
+/**
+ * This is necessary to prevent errors due to the "import { FetchApiDataService }... " in fetch-api-data.service.spec.ts file
+ */
+export class FetchApiDataService {
+  constructor() {}
 }

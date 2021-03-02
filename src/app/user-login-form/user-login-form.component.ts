@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-// Used this import to close the dialog on success
+// Used to close the dialog on success
 import { MatDialogRef } from '@angular/material/dialog';
 // This import brings in the API calls created in fetch-api-data.service.ts
 import { UserLoginService } from '../fetch-api-data.service';
@@ -25,7 +25,9 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // This is the function responsible for sending the form inputs to the backend
+  /**
+   * This is the function responsible for sending the form inputs to the backend and routing the user to the 'movie-card' view after login
+   */ 
   userLogin(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((response) => {
       // logic for a successful user registration goes here!
@@ -44,5 +46,4 @@ export class UserLoginFormComponent implements OnInit {
       });
     });
   }
-
 }

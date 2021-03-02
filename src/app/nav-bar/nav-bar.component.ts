@@ -17,6 +17,9 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Logs the user out, removes their data from local storage, and returns them to the welcome view/login screen
+   */
   logoutUser(): void {
     localStorage.clear();
     this.router.navigate(['welcome']);

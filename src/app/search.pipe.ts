@@ -1,5 +1,4 @@
 import { Injectable, Pipe, PipeTransform } from '@angular/core';
-// import { INSPECT_MAX_BYTES } from 'buffer';
 
 @Pipe({
   name: 'customfilter',
